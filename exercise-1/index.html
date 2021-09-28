@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Exercise 1</title>
+    <meta name="description" content="The Exercise 1" />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+      integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script type="text/javascript" src="./script.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <div id="target"></div>
+    <script id="template" type="text/x-handlebars-template">
+      <div class="list-wrapper">
+        <ul class="list">
+
+          {{#each users}}
+            <li class="list-item">
+              <div>
+                <img src="{{this.avatar}}" class="list-item-image" />
+              </div>
+              <div class="list-item-content">
+                <h4>{{this.name}} <span>ID: {{this.id}}</span></h4>
+                <p>{{formatDate this.createdAt "short"}}</p>
+              </div>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+    </script>
+  </body>
+</html>
